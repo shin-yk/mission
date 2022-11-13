@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- JS -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>
+
+//방법 1
+// const array =[1,2,3,4,5,6,7,8,9,10];
+ // const n = 3;
+ // const k = 7;
+ //
+ // console.log(k);
+
+ // 방법2
+// const count = function(n, k){
+//     const array = [];
+//     for(let i = 1; i <= k; i++){
+//         console.log(i);
+//     }
+//
+//     // let i = -1;
+//     //
+//     // do{
+//     //     i += n;
+//     //     if(i > array.length - 1){
+//     //         i -= array.length;
+//     //     }
+//     //     console.log(array.splice(i, 1));
+//     //
+//     //     i-= 1;
+//     // }while (array.length > 2)
+//     //
+//     // console.log(String(array));
+// };
+
+//방법3
+
+// const n = 3;
+// const k = 7;
+//
+// const array = [];
+//
+// for(let i = 1; i<= k; i++){
+//     console.log(i);
+// }
+
+
+//방법4
+// const array =[1,2,3,4,5,6,7];
+// const n = 3;
+// const k = 7;
+//
+// if(array)
+//
+// // array.forEach( array => console.log(array));
+// for(let i = 1; i <= k; i++){
+//     console.log(i);
+// }
+
+
+
+
+//3,6,2,7,5,1,4
+
+//방법 5
+// const n = 7;
+// const k = 3;
+//
+// const log = [];
+// const queue = Array.from({length: n}, (v,i) => i + 1);
+// while (queue.length > 0){
+//
+//     for(let i =0; i < k -1; i++){
+//         const num = queue.shift();
+//         queue.push(num);
+//     }
+//     const num = queue.shift();
+//     log.push(num);
+// }
+// console.log('<${log.join(",")}>');
+
+
+
+
+ // array.forEach(element => console.log(element));
+
+//방법6
+$(function(){
+
+    let count = function(k,n){
+        count(7,3); // k = 총 인원수, n = n번째
+
+        let arr = [];
+        for (let i = 1; i <= k; i++){
+            arr.push(i);
+            console.log(i);
+        }
+        let i = -1;
+
+        do{
+            i += n;
+            if (i > arr.length -1) {
+                i -= arr.length;
+            }
+            console.log(arr.splice(i,1));
+            i -= 1;
+        }while (arr.length > 2)
+        console.log(String(arr));
+    }
+
+
+});
+
+</script>
+</body>
+</html>
