@@ -5,6 +5,28 @@
     <title>2146</title>
 </head>
 <body>
+<p>문제
+    <br>
+    <span style="font-size: 12px;">N장의 카드가 있다.<br> 각각의 카드는 차례로 1부터 N까지의 번호가 붙어 있으며, <br>1번 카드가 제일 위에<br>, N번 카드가 제일 아래인 상태로 순서대로 카드가 놓여 있다.
+    이제 다음과 같은 동작을 카드가 한 장 남을 때까지 반복<br>제일 위에 있는 카드를 바닥에 버린다.<br> 그 다음, 제일 위에 있는 카드를 제일 아래에 있는 카드 밑으로 옮긴다.<br>
+   제일 마지막에 남게 되는 카드는?</span></p>
+
+<script>
+    function card(n){
+        let arr = [];
+        for(let i=1; i<=n; i++){
+            arr.push(i); // 첫번째 숫자 제거
+        }
+        while(arr.length > 1){
+
+            arr.shift();    //첫번째 배열을 제거
+            arr.push(arr.shift());  //뒤로 보내고 숫자 제거
+        }
+        console.log('남은카드',arr);
+    }
+    card(4);
+
+</script>
 <script>
 
     // 방법1
@@ -18,19 +40,21 @@
 
 
     // 방법 2
-    var arr = [1,2,3,4];
-    var last = arr.lastIndexOf(3);
-    console.log('배열',arr);
-
-    // arr.pop();  //배열의 마지막 요소를 제거
-    arr.splice(0, 1);   //첫번째 배열을 제거 (indexNum, 제거할 n갯수)
-    console.log('첫번째 숫자 제거',arr);
-
-    arr.shift();    //첫번째 배열을 제거
-    arr.push(last); // 맨 앞에 숫자를 뒤로 보내기
-
-    console.log('맨뒤로',arr);
-
+    //     var arr = [1,2,3,4];
+    //     var last = arr.lastIndexOf(3);
+    //     console.log('배열',arr);
+    //
+    //     // arr.pop();  //배열의 마지막 요소를 제거
+    //     arr.splice(0, 1);   //첫번째 배열을 제거 (indexNum, 제거할 n갯수)
+    //     console.log('첫번째 숫자 제거',arr);
+    //
+    //     arr.shift();    //첫번째 배열을 제거
+    //     arr.push(last); // 맨 앞에 숫자를 뒤로 보내기
+    //
+    //     console.log('맨뒤로',arr);
+    // while(){
+    //
+    // }
 
     //방법3
     // var arr = [];
@@ -43,9 +67,41 @@
 
 
 
+    //방법4
+    // var arr = [];
+    // var n = 4;
+    // let i = 1;
+    //
+    // while(i <= n){
+    //     console.log(arr[i]);
+    // }
 
+    // console.log(arr[i]);
+    // i++;
+
+    // 방법 5
+    // var arr = [1,2,3,4];
+    // var last = arr.length;
+    //
+    //
+    // console.log('배열',arr);
+    //
+    // // arr.pop();  //배열의 마지막 요소를 제거
+    // arr.splice(0, 1);   //첫번째 배열을 제거 (indexNum, 제거할 n갯수)
+    // console.log('첫번째 숫자 제거',arr);
+    //
+    // let i = 1;
+    // while (i <= 0){
+    //
+    //     arr.shift();    //첫번째 배열을 제거
+    //     arr.push(last); // 맨 앞에 숫자를 뒤로 보내기
+    //     i++;
+    // }
+    //
+    // console.log('맨뒤로',arr);
+
+    ///
 </script>
-
 
 </body>
 </html>
