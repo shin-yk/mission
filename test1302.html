@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1158</title>
+    <!-- JS -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<script>
+   const arr = [ "가", "나", "다", "라", "나", "나", "마", "바", "다" ];
+   const list = {};  //
+
+   let  maxCount = 0;   // 책의 개수
+   let  maxName = "";   // 책이름
+
+    arr.forEach( name => {
+        //만약 책의 수와 max가 동일하면
+        if(list[name]) list[name]++;
+        else list[name] = 1;
+
+        //책 이름이 count보다 크면 maxName을 변경하고
+        if(list[name] === maxCount && name < maxName ) maxName = name;
+
+        // 책의 개수가 maxCount보다 크면 name,count 둘 다 변경해라
+        else if (list[name] > maxCount ) {
+            maxName = name;
+            maxCount = list[name];
+        }
+    });
+   console.log(maxName);
+// 결과 값 (maxName) = "나"
+</script>
+</body>
+</html>
