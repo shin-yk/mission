@@ -10,43 +10,25 @@
 <script>
     const smallestInt = [1000, 1, -3000, 9, 0, -10, -1, 2, 4, 10000, -12345];
 
-    // function solution(A) {
-    //     let array = A.sort((a, b) => a - b);   // 오름차순 정렬
-    //     let lowestNumber = 1;
-    //
-    //     for (let i = 0; i < array.length; i++) {
-    //         const n = array[i];
-    //         if (n > 0) {
-    //             if (lowestNumber < n) {
-    //                 return lowestNumber;
-    //             } else {
-    //                 lowestNumber = n + 1;
-    //             }
-    //         }
-    //     }
-    //     return lowestNumber;
-    // }
-    // console.log(solution(smallestInt));
+    function solution(A) {
+        let array = A.sort((a, b) => a - b);   // 오름차순 정렬
+        let lowestNumber = 1;
 
-
-    smallestInt.sort(function(a,b) {
-        return a-b;
-    })
-    let num = 1;
-
-    for(let i = 0; i < smallestInt.length; i++){
-        const n = smallestInt[i];
-        if (n > 0) {
-            if (num < n) {
-                 num
-            } else {
-                num = n + 1;
+        for (let i = 0; i < array.length; i++) {
+            const n = array[i];
+            if (n > 0) {
+                if (lowestNumber < n) {
+                    return lowestNumber;
+                } else {
+                    lowestNumber = n + 1;
+                }
             }
         }
-
+        return lowestNumber;
     }
+    console.log(solution(smallestInt));
 
-    console.log(smallestInt)
+
 
 
 
