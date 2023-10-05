@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>삼각형 판별</title>
+  <!-- JS -->
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script>
+    // 세 수 중 가장 큰 수를 찾고, 3수를 더한 값에서 가장 큰수를 뺀 수가 max보다 작거나 같다면 false가 된다
+
+    function solution(a, b, c) {
+      let max = Math.max(a, b, c);
+      let sum = a + b + c;
+      let answer;
+
+      if (sum - max <= max) {
+        answer = false;
+      } else {
+        answer = true;
+      }
+
+      return answer;
+    }
+
+    var result = solution(13, 33, 17);
+    console.log(result);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
