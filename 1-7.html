@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+<body>
+<script>
+
+  //날짜의 일의 자리숫자 = 차 번호 일의 자리 => 해당 숫자를 포함 차 대수 출력
+  function solution(day, arr) {
+
+    let answer = arr.filter((value) => value % 10 === day);
+
+    return answer.length;
+  }
+
+  let arr = [25, 23, 11, 47, 53, 17, 33];
+  console.log(solution(3, arr));
+
+
+  // let arr = [12, 20, 54, 30, 87, 91, 30];
+  // console.log(solution(0, arr));
+</script>
+</body>
+</html>
