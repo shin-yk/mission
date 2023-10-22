@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+    // 1번문제 = 1점, 이후 첫 맞는 문제부터 1점 ++++; 틀린문제는 0점
+    // 정답 =1 , 오답=0
+    function solution(arr) {
+        let answer = 0;
+        let cnt = 0;
+        const scoreArr = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            const item = arr[i];
+
+            if (item === 1) {
+                cnt++;
+                answer += cnt;
+            } else {
+                cnt = 0;
+            }
+            scoreArr.push(item * cnt);
+        }
+        // console.log(scoreArr);
+        return answer;
+    }
+    let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+    console.log(solution(arr));
+
+    //(10)[1, 0, 1, 2, 3, 0, 0, 1, 2, 0]
+</script>
+</body>
+</html>

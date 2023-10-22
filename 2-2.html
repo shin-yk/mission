@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+<body>
+<script>
+    // 맨 앞에 서 있는 선생님이 볼 수 있는 학생의 수
+    // 앞에 서있는 사람보다 크면 보임
+    // 작거나 같으면 안 보임
+    // 보이는 최대수
+    function solution(arr) {
+        let answer = 1;
+        let max = arr[0];
+        // let height = [max]; // 해당 학생들의 키 배열
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                answer++;
+                max = arr[i];
+                // height.push(max);
+            }
+        }
+
+        // return { answer, height };
+        return answer
+    }
+
+    let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+    console.log(solution(arr));
+</script>
+</body>
+</html>
